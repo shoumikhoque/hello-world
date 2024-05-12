@@ -128,6 +128,14 @@ class Trie:
             return
         print("\nDeleting:", key)
         self.delete_helper(key, self.root, len(key), 0)
+    def total_Number_of_words(self,node):
+        result=0
+        if node.is_end_word:
+            result+=1
+        for letter in node.children:
+            if letter is not None:
+                result+=self.total_Number_of_words(letter)
+        return result
 
 
 if __name__ == '__main__':
@@ -137,7 +145,7 @@ if __name__ == '__main__':
     res = ["Not present in trie", "Present in trie"]
 
     t = Trie()
-    print("Keys to insert: \n", keys)
+    # print("Keys to insert: \n", keys)
 
     # Construct Trie
     for words in keys:
@@ -151,5 +159,5 @@ if __name__ == '__main__':
     # Delete abc
     t.delete("abc")
     print("Deleted key \"abc\" \n")
-
+    print(t.total_Number_of_words(t.root))
     print("abc --- " + res[1] if t.search("abc") else "abc --- " + res[0])
