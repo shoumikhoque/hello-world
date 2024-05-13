@@ -50,4 +50,4 @@ class MinHeap:
     def buildHeap(self,arr):
         self.heap=arr
         for i in range (len(arr)-1,-1,-1):
-            self.__minHeapify(self,i)
+            self.__minHeapify(i)
