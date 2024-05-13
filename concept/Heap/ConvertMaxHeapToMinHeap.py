@@ -1,4 +1,4 @@
-from Heap.MinHeap import MinHeap
+from concept.Heap.MinHeap import MinHeap
 
 
 def convertToMinHeap(arr):
