@@ -1,4 +1,4 @@
-from concept.HashMap.HashEntry import HashEntry
+from concept.DataStructure.HashMap.HashEntry import HashEntry
 
 
 class HashMap:
