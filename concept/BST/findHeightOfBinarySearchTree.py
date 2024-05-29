@@ -1,4 +1,4 @@
-from concept.DataStructure.BST.BinarySearchTree import BinarySearchTree
+from concept.BST.BinarySearchTree import BinarySearchTree
 
 
 def findHeight(root,h=0):
