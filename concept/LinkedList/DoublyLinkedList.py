@@ -30,20 +30,28 @@ class DoublyLinkedList(LinkedList):
             self.tail=self.tail.next
             self.tail.prev=temp
     def pop_from_head(self):
-        if self.is_empty() :
+        if self.is_empty():
             return
-        temp=self.head
-        self.head.next.prev=None
-        self.head=self.head.next
-        return temp.val
+        temp = self.head
+        if temp.next is None:
+            self.head=None
+            return temp.val
+        else:
+            self.head.next.prev=None
+            self.head=self.head.next
+            return temp.val
 
     def pop_from_tail(self):
         if self.is_empty() :
             return
         temp=self.tail
-        self.tail.prev.next=None
-        self.tail=self.tail.prev
-        return temp.val
+        if temp.prev is None:
+            self.tail=None
+            return temp.val
+        else:
+            self.tail.prev.next=None
+            self.tail=self.tail.prev
+            return temp.val
 
     def pop_value(self,val):
         if self.is_empty():
