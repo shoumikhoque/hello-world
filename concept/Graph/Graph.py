@@ -9,8 +9,8 @@ class Graph:
     def __init__(self,v):
         self.nodes=v
         self.directed=True
-        self.adj_list=[None]*(self.nodes+1)
-        for i in range(v+1):
+        self.adj_list=[None]*(self.nodes)
+        for i in range(v):
             self.adj_list[i]=LinkedList()
     def __str__(self):
         ans=''
