@@ -16,12 +16,10 @@ def breadth_first_search(g:Graph,start:int):
         if visited[current_val]==False:
             visited[current_val]=True
             ans.append(current_val)
-            current_adj_list=g.adj_list[current_val]
-            if current_adj_list is not None:
-                current_head=current_adj_list.head
-                while current_head is not None:
-                    q.enqueue(current_head.val)
-                    current_head=current_head.next
+            current_head=g.adj_list[current_val].head
+            while current_head is not None:
+                q.enqueue(current_head.val)
+                current_head=current_head.next
     return ans
 
 

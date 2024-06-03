@@ -2,7 +2,7 @@ class Stack:
     def __init__(self,items=[]):
         self.items=items
     def get_size(self):
-        return len(self.size)
+        return len(self.items)
     def is_empty(self):
         return self.get_size()==0
     def push(self,val):
