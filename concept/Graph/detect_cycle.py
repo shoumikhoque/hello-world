@@ -1,3 +1,4 @@
+from concept.Graph.Graph import Graph
 def detect_cycle(g, param):
     # traverse using DFS
     # if any node is found which already has visited[val]=True
