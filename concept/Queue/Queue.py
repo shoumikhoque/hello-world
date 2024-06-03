@@ -16,7 +16,7 @@ class Queue:
     def enqueue(self,val):
         self.queue.insert_at_tail(val)
     def dequeue(self):
-        self.queue.pop_from_head()
+        return self.queue.pop_from_head()
     def __str__(self):
         return self.queue.__str__()
 if __name__ == '__main__':
