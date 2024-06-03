@@ -1,4 +1,4 @@
-from concept.DataStructure.HashMap.HashMap import HashMap
+from concept.HashMap.HashMap import HashMap
 
 if __name__=="__main__":
     hash_map=HashMap()
