@@ -2,7 +2,7 @@ from concept.Graph.Graph import Graph
 from concept.Queue.Queue import Queue
 
 
-def check_if_path_exists_betweent_two_nodes(g:Graph,start,end):
+def check_if_path_exists_between_two_nodes(g:Graph,start,end):
     queue=Queue()
     queue.enqueue(start)
     visited=[False]*g.nodes
@@ -29,6 +29,6 @@ if __name__ == '__main__':
         for edge in edges_list[i]:
             g.add_edge(edge[0], edge[1])
         print(str(g))
-        print("\n\t Output:", check_if_path_exists_betweent_two_nodes(g,6,0))
+        print("\n\t Output:", check_if_path_exists_between_two_nodes(g,6,0))
         print("-" * 100)
         i += 1
