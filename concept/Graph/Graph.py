@@ -1,4 +1,6 @@
 from concept.LinkedList.LinkedList import LinkedList
+from concept.Queue.Queue import Queue
+from concept.Stack.Stack import Stack
 
 
 class AdjNode:
@@ -50,6 +52,43 @@ class Graph:
                 adj_node=adj_node.next
         return transpose_graph
 
+    def breadth_first_search(self, start: int):
+        ans = []
+        # use queue
+        if self.adj_list[start] is None:
+            return
+        q = Queue()
+        visited = [False] * self.nodes
+        q.enqueue(start)
+        # while queue is not empty dequeue and check if this value has a node in graph and if the node has adjacent nodes and push them to queue
+        while q.is_empty() is False:
+            current_val = q.dequeue()
+            if visited[current_val] == False:
+                visited[current_val] = True
+                ans.append(current_val)
+                current_head = self.adj_list[current_val].head
+                while current_head is not None:
+                    q.enqueue(current_head.val)
+                    current_head = current_head.next
+        return ans
+    def deapth_first_search(self, start:int):
+        if self.adj_list[start] is None:
+            return
+        ans=[]
+        visited=[False]*self.nodes
+        stack=Stack()
+        stack.push(start)
+        visited[start]=True
+        while not stack.is_empty() :
+            current_val=stack.pop()
+            ans.append(current_val)
+            current_head= self.adj_list[current_val].head
+            while current_head is not None:
+                if not visited[current_head.val] :
+                    stack.push(current_head.val)
+                    visited[current_head.val]=True
+                current_head=current_head.next
+        return ans
 if __name__ == '__main__':
     g=Graph(8)
     g.add_edge(1, 2)
