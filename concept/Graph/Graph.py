@@ -41,6 +41,14 @@ class Graph:
     def removeNode(self):
         #
         pass
+    def transpose(self):
+        transpose_graph=Graph(self.nodes)
+        for i in range(self.nodes):
+            adj_node=self.adj_list[i].head
+            while adj_node is not None:
+                transpose_graph.add_edge(adj_node.val,i)
+                adj_node=adj_node.next
+        return transpose_graph
 
 if __name__ == '__main__':
     g=Graph(8)
