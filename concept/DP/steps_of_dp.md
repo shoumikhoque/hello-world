@@ -1,0 +1,4 @@
+- brute force solution using recursion
+- top down solution using memoization
+- bottom up solution building up dp table/array , because even if it is O(n) , it takes less time than top down
+- memory optimization in bottom up solution
