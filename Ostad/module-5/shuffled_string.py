@@ -1,4 +1,6 @@
 def shuffle_string(s, indices):
+    # Time : O(n)
+    # Space :O(n)
     ans = [''] * len(indices)
     for i in range(len(s)):
         ans[indices[i]] = s[i]

@@ -7,6 +7,14 @@
 Time Complexity: O(n*m)
 Space Complexity: O(1)
 ````
+
+### Solution 2: using KMP
+- Creating the `LPS`(Longest proper prefix) Array of the `needle`
+- searching the pattern in the `haystack`
+````
+Time Complexity: O(m + n) , m=len(needle) , n=len(haystack)
+Space Complexity: O(m)
+````
 ### Problem Statement
 Write a function that does the following task.
 Given two strings needle and haystack, return the index of the first occurrence of needle in haystack,
