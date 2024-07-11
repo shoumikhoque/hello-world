@@ -14,11 +14,17 @@ a pre-defined stopping condition.
 ```
 def RecursiveFunction() :
   # Base Case
-  if <baseCaseCondition> :
-    <return some base case value>
+  if baseCaseCondition :
+    return (some base case value)
 
   # Recursive Case
   else :
-    <return(recursive call and any other task)>
+    return(recursive call and any other task)
 ```
+### When to use
+- when the problem can be broken down into smaller sub-problems.
+- when the problem needs arbitrary number of loops. 
+#### Notes
+- _Recursion is not always the best metod for solving a problem , even if it is possible to do so._
+- _if it is confirmed how many loops are needed to solve the problem , it is better to use iterative approach._ 
 
