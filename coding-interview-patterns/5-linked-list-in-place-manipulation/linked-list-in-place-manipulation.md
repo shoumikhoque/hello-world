@@ -8,7 +8,7 @@
 - **File system management**: for rearranging files within a directory
 - **memory management**: for dynamic memory allocation, garbage collection etc
 ## Problems
-### 1. Reverse Linked List : [Solution](reverse_linked_list.py)
+### 1. Reverse Linked List : [Solution](../../Ostad/module-7/practice/reverse_linked_list.py)
 ````
 input: head of a linked list
 output: head of the reversed linked list
