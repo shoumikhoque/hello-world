@@ -64,6 +64,27 @@ class LinkedList:
             sb+=str(current.val)+'->'
             current=current.next
         return sb[:-2]
+    def __reversed__(self):
+        if self.size < 2:
+            return
+        rev_ll=self.__copy__()
+        prev = rev_ll.head
+        current = prev.next
+        rev_ll.head.next = None
+        while current is not None:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+        rev_ll.head = prev
+        return rev_ll
+    def __copy__(self):
+        copied=LinkedList()
+        curr=self.head
+        while curr is not None:
+            copied.add(curr.val)
+            curr=curr.next
+        return copied
 if __name__ == '__main__':
     ll =LinkedList()
 
