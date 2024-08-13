@@ -17,7 +17,8 @@ def reverse_in_group(linked_list, left, right):
         right_node=right_node.next
         count+=1
     next_of_range = right_node.next
-    prev_of_range.next=None
+    if prev_of_range is not None:
+        prev_of_range.next=None
     linked_list.head=left_node
     right_node.next=None
     linked_list=reversed(linked_list)
@@ -25,12 +26,10 @@ def reverse_in_group(linked_list, left, right):
     while temp.next is not None:
         temp=temp.next
     temp.next=next_of_range
-    prev_of_range.next=linked_list.head
-    linked_list.head=ll_head
-
+    if prev_of_range is not None:
+        prev_of_range.next=linked_list.head
+        linked_list.head=ll_head
     return linked_list
-
-
 
 if __name__ == '__main__':
     input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
