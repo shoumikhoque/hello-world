@@ -65,7 +65,7 @@ class LinkedList:
             current=current.next
         return sb[:-2]
     def __reversed__(self):
-        if self.size < 2:
+        if self.head is None or self.head.next is  None :
             return
         rev_ll=self.__copy__()
         prev = rev_ll.head
