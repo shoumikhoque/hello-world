@@ -79,3 +79,12 @@ Given the head of a linked list, the nodes in it are assigned to each group in a
 5. reverse the group if the groupSize is even
 6. then reassign the group after prev node and before the first node of the next group
 7. return the linked list
+
+### 6. Swap node in pairs: [Solution](swap_each_pairs.py)
+swap every two adjacent nodes of the linked list. After the swap, return the head of the linked list.
+#### Steps
+1. traverse list 
+2. check to make sure there is at least two nodes in the remaining part of the list
+3. swap the two nodes
+4. reconnect two swapped nodes
+5. repeat until there is only one or no nodes left
