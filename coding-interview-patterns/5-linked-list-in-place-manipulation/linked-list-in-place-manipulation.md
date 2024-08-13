@@ -48,11 +48,12 @@ Given a singly linked list with nn nodes and two positions, left and right, the 
 ### 4. ReOrder List: [Solution](reorder_list.py)
 Given the head of a singly linked list, reorder the list as if it were folded on itself. For example, if the list is represented as follows:
 
-`L0L0​ → L1L1​ → L2L2​ → … → Ln−2Ln−2​ → Ln−1Ln−1​ → LnLn​ ​`
+`L0L0 → L1L1  → L2L2  → … → Ln−2Ln−2  → Ln−1Ln−1 → LnLn`
+
 
 This is how you’ll reorder it:
 
-`L0L0​ → LnLn​ → L1L1​ → Ln−1Ln−1​ → L2L2​ → Ln−2Ln−2​ → …`
+`L0L0 → LnLn  → L1L1  → Ln−1Ln−1  → L2L2  → Ln−2Ln−2 → …`
 
 You don’t need to modify the values in the list’s nodes; only the links between nodes need to be changed.
 
@@ -60,3 +61,21 @@ You don’t need to modify the values in the list’s nodes; only the links betw
 1. Find the middle node. If there are two middle nodes choose the second one.
 2. reverse the second half of the list
 3. merge 1st and 2nd half of the list
+
+### 4. Swapping nodes: [Solution](swapping_nodes.py)
+Given the linked list and an integer, k, return the head of the linked list after swapping the values of the kth node from the beginning and the kth node from the end of the linked list.
+
+#### Steps
+1. find kth element from first (front) and back(end).
+2. swap two nodes
+
+### 5. Reverse Nodes In Even Length Groups: [Solution](reverse_node_in_even_groups.py)
+Given the head of a linked list, the nodes in it are assigned to each group in a sequential manner. The length of these groups follows the sequence of natural numbers. Natural numbers are positive whole numbers denoted by (1,2,3,4...).
+#### Steps
+1. traverse from head node
+2. find each group with size from (1.2.3.....)
+3. keep prev node of a group
+4. for each group find last of a group and first of next group 
+5. reverse the group if the groupSize is even
+6. then reassign the group after prev node and before the first node of the next group
+7. return the linked list
