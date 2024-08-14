@@ -66,7 +66,7 @@ class LinkedList:
         return sb[:-2]
     def __reversed__(self):
         if self.head is None or self.head.next is  None :
-            return
+            return self
         rev_ll=self.__copy__()
         prev = rev_ll.head
         current = prev.next
