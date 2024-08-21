@@ -67,3 +67,26 @@ a new k-length substring.
 - Space occupied by the mapping hash map: O(1).
 - Space occupied by the numbers array: O(n).
 - Space occupied by the hash_set set: O(n−k+1).
+### Find max in sliding window
+Given an integer list, `nums`, find the maximum values in all the contiguous sub-arrays (windows) of size `w`.
+#### Brute force 
+1. take each sliding window  O(n-w+1)
+2. for each window, calculate the max value by traversing window from start to end -> `time O(w)`
+#### Complexity
+`Time: O(n*w)`
+`Space: O(w)`
+#### Using deque
+1. if list size is 1 , return list as `output`
+2. create a `deque` to store indices of the candidate maximum of each window
+2. process the first `w` elements . 
+3. for each element, perform `clean-up` step , removing the indices of the elements from the 
+deque whose values are smaller than or equal to the value of the new element . 
+4. append the index of the new element at the back of the deque. 
+5. append the element whose index is present at the front of deque to the output list as the maximum of the first window
+6. repeat step 3 for the rest of the elements
+7. additionally , in each iteration , before appending index to the current element to the deque, 
+check if the first index of the deque has fallen out of the bound of current window
+8. return `output` list
+#### Complexity
+[Complexity Analysis](https://www.educative.io/module/page/8q5JgjuQREjpzD9gq/10370001/4803867293515776/4961871808692224#Time-complexity)
+
