@@ -15,7 +15,7 @@ more than O(1) additional space.
 - **memory management**: for dynamic memory allocation, garbage collection etc
 ## Practice Problems
 
-### 1. Reverse Linked List : [Solution](../../Ostad/module-7/practice/reverse_linked_list.py)
+### 1. Reverse Linked List : [Solution](../../Ostad/module-7:LinkedList/practice/reverse_linked_list.py)
 ````
 input: head of a linked list
 output: head of the reversed linked list
