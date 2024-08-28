@@ -23,7 +23,7 @@ calculate the median number of buffering events in each one-minute interval.
 of posts by one user that includes all the topics that the other user has posted about.
 
 ## Practice Problems
-### 1. Repeated DNA Sequence
+### 1. Repeated DNA Sequence : [Leetcode](https://leetcode.com/problems/repeated-dna-sequences/description/)
 Given a string, `dna`, that represents a DNA subsequence, and a number `k`, return all the contiguous 
 subsequences (substrings) of length `k` that occur more than once in the string. 
 #### Brute force Steps
@@ -89,4 +89,20 @@ check if the first index of the deque has fallen out of the bound of current win
 8. return `output` list
 #### Complexity
 [Complexity Analysis](https://www.educative.io/module/page/8q5JgjuQREjpzD9gq/10370001/4803867293515776/4961871808692224#Time-complexity)
+
+### Minimum Window Subsequence : [Leetcode premium](https://leetcode.com/problems/minimum-window-subsequence/description/)
+Given two strings, `str1` and `str2`, find the shortest substring in str1 such that str2 is a subsequence of that substring.
+
+A `SubString` is defined as a contiguous sequence of characters within a string. <br>
+A `SubSequence` is a sequence that can be derived from another sequence by deleting zero or more elements without changing the order of the remaining elements.
+#### using sliding window
+1. iterate through `str1` to locate potential window that contains all the characters of `str2` in their order of appearance.
+2. backtrack through the characters of `str1` from this end position until found all the characters of `str2` in reverse order.
+   this helps locate potential start of the smallest subsequence.
+3. update the minimum window subsequence if the current window is smaller than the shortest subsequence found so far.
+4. repeat the process , starting every time from the second character of the current window, until the end of `str1` has been reached
+5. return minimum window subsequence
+#### Complexity
+`time:O(n*m)
+space: O(1)`
 
