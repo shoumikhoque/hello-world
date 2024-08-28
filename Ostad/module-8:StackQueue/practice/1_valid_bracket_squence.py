@@ -25,19 +25,19 @@ def is_valid_parenthesis(s):
     st = Stack()
     openings = ['(', '{', '[']
     closings = [')', '}', ']']
-    for i in s:
-        if i in closings:
-            if st.is_empty() or closings[openings.index(st.pop())] != i:
+    for i in range(len(s)):
+        if s[i] in closings:
+            if  not st.is_empty() and closings[openings.index(st.pop())] != s[i]:
                 return 'Not valid'
-    else:
-        st.push(i)
+        else:
+            st.push(s[i])
     if not st.is_empty():
         return 'Not valid'
     return 'Valid'
 
 if __name__ == '__main__':
-    # t = int(input())
-    # for _ in range(t):
-    #     s = input().strip()
-    #     print(is_valid_parenthesis(s))
-    print(is_valid_parenthesis('[][(){}{}(()([](({{}}{()}()[])()(())())))()](())[[][{([({}(()()))[]({{[[{}](([]{[](([]{{}}[]){({})}()[[()]{}])}[[]]((()([[]][{(([][({}{}([])({}([{}[{}[()[]{()}[{}'))
+    t = int(input())
+    for _ in range(t):
+        s = input().strip()
+        print(is_valid_parenthesis(s))
+    print(is_valid_parenthesis('[]{}()[]'))
