@@ -23,7 +23,7 @@ calculate the median number of buffering events in each one-minute interval.
 of posts by one user that includes all the topics that the other user has posted about.
 
 ## Practice Problems
-### 1. Repeated DNA Sequence : [Leetcode](https://leetcode.com/problems/repeated-dna-sequences/description/)
+### 1. Repeated DNA Sequence @ [Leetcode:Medium](https://leetcode.com/problems/repeated-dna-sequences/description/)
 Given a string, `dna`, that represents a DNA subsequence, and a number `k`, return all the contiguous 
 subsequences (substrings) of length `k` that occur more than once in the string. 
 #### Brute force Steps
@@ -67,7 +67,7 @@ a new k-length substring.
 - Space occupied by the mapping hash map: O(1).
 - Space occupied by the numbers array: O(n).
 - Space occupied by the hash_set set: O(n−k+1).
-### Find max in sliding window
+### 2. Find max in sliding window @ [Leetcode: Hard](https://leetcode.com/problems/sliding-window-maximum/description/)
 Given an integer list, `nums`, find the maximum values in all the contiguous sub-arrays (windows) of size `w`.
 #### Brute force 
 1. take each sliding window  O(n-w+1)
@@ -75,7 +75,7 @@ Given an integer list, `nums`, find the maximum values in all the contiguous sub
 #### Complexity
 `Time: O(n*w)`
 `Space: O(w)`
-#### Using deque
+#### Using deque : [Solution](find_max_sliding_window.py)
 1. if list size is 1 , return list as `output`
 2. create a `deque` to store indices of the candidate maximum of each window
 2. process the first `w` elements . 
@@ -90,12 +90,12 @@ check if the first index of the deque has fallen out of the bound of current win
 #### Complexity
 [Complexity Analysis](https://www.educative.io/module/page/8q5JgjuQREjpzD9gq/10370001/4803867293515776/4961871808692224#Time-complexity)
 
-### Minimum Window Subsequence : [Leetcode premium](https://leetcode.com/problems/minimum-window-subsequence/description/)
+### 3. Minimum Window Subsequence @ [Leetcode premium](https://leetcode.com/problems/minimum-window-subsequence/description/)
 Given two strings, `str1` and `str2`, find the shortest substring in str1 such that str2 is a subsequence of that substring.
 
 A `SubString` is defined as a contiguous sequence of characters within a string. <br>
 A `SubSequence` is a sequence that can be derived from another sequence by deleting zero or more elements without changing the order of the remaining elements.
-#### using sliding window
+#### using sliding window : **[Solution](minimum_window_subsequence.py)**
 1. iterate through `str1` to locate potential window that contains all the characters of `str2` in their order of appearance.
 2. backtrack through the characters of `str1` from this end position until found all the characters of `str2` in reverse order.
    this helps locate potential start of the smallest subsequence.
