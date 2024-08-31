@@ -105,4 +105,30 @@ A `SubSequence` is a sequence that can be derived from another sequence by delet
 #### Complexity
 `time:O(n*m)
 space: O(1)`
+### 4. Minimum window Substring @ [Leetcode:Hard](https://leetcode.com/problems/minimum-window-substring/description/)
+Given two strings, `s` and `pattern`, find the minimum window substring in s, which has the following properties:
+ - It is the shortest substring of s that includes all the characters present in `pattern`.
+ - It must contain at least the same frequency of each character as in `pattern`.
+ - The order of the characters does not matter here.
+ - Strings s and t consist of uppercase and lowercase English characters.
+ - `1 <=s.length, t.length <=10^3`
 
+#### Using sliding window and hashmap : [Solution](minimum_window_substring.py)
+1. if `pattern` is empty then return empty string
+2. define two hashmaps , `req_count` to store the required count of each char in `pattern` and `window` to store char count of the current window
+3. iterate over the string to find a window with all chars in `pattern` the help of hashmaps 
+4. if the length is less than previous `res_len` , then store the length and substring as `result` 
+5. decrease the window from left side such that it at least 1 char is missing in the window
+6. again start traversing the string and add chars in window , repeat step 3
+7. return the `result` string after iterating the whole string 
+
+#### Complexity
+`time:O(n+m) for traversing the whole string twice and traversing window
+space: O(n) for hashmap`
+### 5. Longest Substring Without Repeating Characters @ [Leetcode:Medium](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+
+### 6. Longest Repeating Character Replacement @ [Leetcode:Medium](https://leetcode.com/problems/longest-repeating-character-replacement/description/)
+
+### 7. Minimum Size Subarray Sum @ [Leetcode:Medium](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
+
+### 8. Best Time to Buy and Sell Stock @ [Leetcode:Easy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
