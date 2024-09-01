@@ -37,6 +37,7 @@ def merge_sort(lst):
             lst[k] = right[j]
             j += 1
             k += 1
+    return lst
 
 
 # Driver code to test the above code

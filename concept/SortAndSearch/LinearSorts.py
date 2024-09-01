@@ -30,7 +30,15 @@ def insertion_sort(lst):
             j -= 1
         lst[j + 1] = key
     return lst
+def to_str(arr):
+    s=''
+    for i in arr:
+        s+=' '+str(i)
+    return s[1:]
 
 if __name__ == '__main__':
-    arr=[11,6,4,8,7,6,5,3,0,9]
-    print(insertion_sort(arr))
+    n=int(input().strip())
+    arr=input().strip()
+    arr=arr.split(' ')
+    arr=[int(i) for i in arr]
+    print(to_str(bubble_sort(arr)))
