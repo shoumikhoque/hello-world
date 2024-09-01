@@ -126,7 +126,22 @@ Given two strings, `s` and `pattern`, find the minimum window substring in s, wh
 `time:O(n+m) for traversing the whole string twice and traversing window
 space: O(n) for hashmap`
 ### 5. Longest Substring Without Repeating Characters @ [Leetcode:Medium](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+Given a string `input_str`, return the length of the longest substring without repeating characters.
+#### Constraints:
+`1 <= input_str.length <= 10^5` <br>
+`input_str` consists of English letters, digits, symbols, and spaces.
 
+#### Using sliding window: [Solution](longest_substring_without_repeating_chars.py)
+1. Init: `window_start`,  a hashmap to store `last_found_index` of every characters.
+2. traverse through the string
+3. if a char doesn't exist in the hashmap, just add it 
+4. if a char already exist , then find the length of the current window [window_start,current_index], update final length
+using max function
+5. return length
+
+#### Complexity
+`time:O(n) for traversing the whole string
+space: O(26)~)(1) for hashmap`
 ### 6. Longest Repeating Character Replacement @ [Leetcode:Medium](https://leetcode.com/problems/longest-repeating-character-replacement/description/)
 
 ### 7. Minimum Size Subarray Sum @ [Leetcode:Medium](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
