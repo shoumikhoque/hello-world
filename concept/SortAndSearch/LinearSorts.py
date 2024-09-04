@@ -1,6 +1,3 @@
-from encodings.punycode import insertion_sort
-
-
 def selection_sort(arr):
     # select the minimum number in the list and put it in the front
     for i in range(len(arr)-1):
@@ -11,7 +8,6 @@ def selection_sort(arr):
         arr[i],arr[mini]=arr[mini],arr[i]
     return arr
 
-
 def bubble_sort(arr):
     #compare two adjacent items and swap position if necessary until end
     for i in range(len(arr)):
@@ -19,6 +15,7 @@ def bubble_sort(arr):
             if arr[j]>arr[j+1]:
                 arr[j],arr[j+1]=arr[j+1],arr[j]
     return arr
+
 def insertion_sort(lst):
     # Traverse through 1 to len(lst)
     for i in range(1, len(lst)):
@@ -30,6 +27,7 @@ def insertion_sort(lst):
             j -= 1
         lst[j + 1] = key
     return lst
+
 def to_str(arr):
     s=''
     for i in arr:

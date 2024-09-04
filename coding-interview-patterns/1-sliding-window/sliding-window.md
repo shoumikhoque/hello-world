@@ -144,6 +144,10 @@ using max function
 space: O(26)~)(1) for hashmap`
 ### 6. Longest Repeating Character Replacement @ [Leetcode:Medium](https://leetcode.com/problems/longest-repeating-character-replacement/description/)
 
+#### Steps
+
+
+
 ### 7. Minimum Size Subarray Sum @ [Leetcode:Medium](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
 
 ### 8. Best Time to Buy and Sell Stock @ [Leetcode:Easy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)

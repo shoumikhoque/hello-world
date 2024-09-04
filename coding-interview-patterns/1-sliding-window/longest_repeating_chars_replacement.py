@@ -15,7 +15,6 @@ def find(s,k):
 
 
 def find_most_freq_char_in_map(freq_map:dict):
-
     max_count=0
     for k,v in freq_map.items():
         max_count=max(max_count,v)
