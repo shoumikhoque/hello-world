@@ -2,11 +2,10 @@ def find(s,k):
     freq_map={}
     left=0
     max_length=0
-    most_freq_char=0
     for right in range(len(s)):
         c=s[right]
         freq_map[c]=1+freq_map.get(c,0)
-        if max_length-find_most_freq_char_in_map(freq_map)<=k:
+        if max_length - find_most_freq_char_in_map(freq_map)<k:
             max_length=max(max_length,right-left+1)
         else:
             freq_map[s[left]]-=1

@@ -143,11 +143,37 @@ using max function
 `time:O(n) for traversing the whole string
 space: O(26)~)(1) for hashmap`
 ### 6. Longest Repeating Character Replacement @ [Leetcode:Medium](https://leetcode.com/problems/longest-repeating-character-replacement/description/)
-
+Given a string `s` and an integer `k`, find the length of the longest substring in `s`, where all characters are identical, after replacing, at most, `k `
+#### Constraints
+`1≤ s.length ≤10^3≤10^3`
+`0≤ k ≤ s.length`
 #### Steps
-
-
+1. traverse through string left to right
+2. use a freq_map dictionary to store frequency of each char for current window
+3. if current window length-most frequent char count is less than k , then increase max_length
+4. otherwise shrink the current window from left and update freq_dict
+5. after traversal , return max_length
+#### Complexity
+`time -> O(26*n)
+space -> 0(*26)`
 
 ### 7. Minimum Size Subarray Sum @ [Leetcode:Medium](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
-
+Given an array of positive integers, `nums`, and a positive integer, `target`, find the minimum length of a contiguous
+subarray whose sum is greater than or equal to the target. If no such subarray is found, return 0.
+#### Constraints
+````
+1 ≤ target ≤ 10^4
+1 ≤ nums.length ≤ 10^3
+1 ≤ nums[i] ≤ 10^3
+````
+#### Steps
+1. traverse nums from left to right and maintain a sliding window 
+2. update min_length if current_sum is less than min_length if sum of the current window elements = target
+3. after traversal, return min
 ### 8. Best Time to Buy and Sell Stock @ [Leetcode:Easy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+#### Steps
+1. traverse array and run a sliding window 
+2. calculate profit using max

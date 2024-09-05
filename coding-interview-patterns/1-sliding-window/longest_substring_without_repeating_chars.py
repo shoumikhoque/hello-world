@@ -1,9 +1,3 @@
-from operator import index
-
-# abcabcbb
-# window_start=7
-# longest=3
-# last_found_index={a:3,b:6,c:5}
 def find(s):
     if len(s)==0:
         return 0
