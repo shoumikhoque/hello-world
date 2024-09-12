@@ -18,15 +18,17 @@ def minimum_substring(s, pattern):
             if(right-left+1)<res_len:
                 res=[left,right]
                 res_len=(right-left+1)
-            left_char=s[left]
+            left_char = s[left]
+
+
             if left_char in pattern:
                 window[left_char]-=1
-                if left_char in req_count and window[left_char]<req_count[left_char]:
-                    have-=1
-                left+=1
+            if left_char in req_count and window[left_char]<req_count[left_char]:
+                have-=1
+            left+=1
     left,right=res
     return s[left:right+1] if res_len !=float('inf') else ""
 if __name__ == '__main__':
-    s='ABDOEDECOBE'
-    pattern='BC'
+    s='ADOBECODEBANC'
+    pattern='ABC'
     print(minimum_substring(s,pattern))
