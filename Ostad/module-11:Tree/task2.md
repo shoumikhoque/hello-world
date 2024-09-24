@@ -1,4 +1,4 @@
-## Task 1
+## Task 2
 **Code in [binary_search_tree.py](binary_search_tree.py)**
 
 ### Solution : search in BST
