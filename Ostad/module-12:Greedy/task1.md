@@ -1,11 +1,11 @@
 ## Task 1
 **Code in [maximum_unit.py](maximum_unit.py)**
 
-### Solution : Simple greedy
+### Solution : Simple greedy using sort
 
 ````
-Time Complexity: O(n) for traversing all the nodes of the binary tree
-Space Complexity: O(log(n))  for memory stack
+Time Complexity: O(nlogn) 
+Space Complexity: O(1)
 ````
 
 ### Problem Statement
@@ -18,31 +18,29 @@ You are also given an integer truckSize, which is the maximum number of boxes th
 Return the maximum total number of units that can be put on the truck.
 Mention the time and space complexity of your solution.
 ## Constraints
-```
-The number of nodes in the tree is in the range [0, 10^4].
--100 <= Node.val <= 100
-```
-```
-Note: You will be given a tree as input. The example inputs are shown as an array for simplification only.
-In the array, the (2^index) is the left child and (2^index + 1) is the right child of the node at 'index'. In this case, index=0 is the root of the tree.
+`1 <= boxTypes.length <= 1000
+1 <= number_of_boxes_i, number_of_unit_per_box_i<= 1000
+1 <= truckSize <= 10^6`
+
 ### Example 1
 ```
-Input: root = [3,9,20,null,null,15,7] 
-Output: 3
-Explanation: 
-the tree is visually as following
-    3
-   /  \
-  9   20
- / \
-7  15
+Input: boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4
+Output: 8
+Explanation: There are:
+- 1 box of the first type that contains 3 units.
+- 2 boxes of the second type that contain 2 units each.
+- 3 boxes of the third type that contain 1 unit each.
+You can take all the boxes of the first and second types, and one box of the third type.
+The total number of units will be = (1 * 3) + (2 * 2) + (1 * 1) = 8.
 ```
 ### Example 2:
 ```
-Input: root = [1,null,2]
-Output: 2
-Explanation: the tree is visually as following
-      1
-    /  \
-        2
+
+Input: boxTypes = [[5,10],[2,5],[4,7],[3,9]], truckSize = 10
+Output: 91
+Explanation: There are:
+- 5 boxes of the first type that contain 10 units.
+- 3 boxes of the second type that contain 9 units each.
+- 2 boxes of the third type that contain 7 units each.
+The total number of units will be = (5 * 10) + (3 * 9) + (2 * 7) = 91.
 ```
