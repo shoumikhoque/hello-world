@@ -41,7 +41,23 @@ output: true/false if the word exists in the board
 3. if dfs search returns false , then start the word search from the next char of the board until the whole board 
    is searched or the word is found
 #### Complexity
-`Time: O(c×3l), where c is the number of cells and l is the length of the word we are searching for
-Space: O(l), where l is the length of the word`
+```
+Time: O(c×3l), where c is the number of cells and l is the length of the word we are searching for
+Space: O(l), where l is the length of the word
+```
 
 ### 2. House Robber III @ [Leetcode:Medium](https://leetcode.com/problems/house-robber-iii/description/)
+````
+input: binary tree as array
+output: max profit value
+````
+1. if the tree is empty return [0,0]
+2. otherwise , recursively calculate the max amount of money that can be robbed from left and  right sub-tree 
+3. calculate the amount of that can be robbed including root and excluding root 
+   1. for including root -> root.val + left_subtree_without_root +right_subtree_without_root
+   2. for excluding root -> max(with , without root of left sub-tree) +max(with , without root of right sub-tree)
+4. return the max of these two values
+```
+Time: O(n)
+Space: O(n), 
+```
