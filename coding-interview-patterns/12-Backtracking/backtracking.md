@@ -46,11 +46,12 @@ Time: O(c×3l), where c is the number of cells and l is the length of the word w
 Space: O(l), where l is the length of the word
 ```
 
-### 2. House Robber III @ [Leetcode:Medium](https://leetcode.com/problems/house-robber-iii/description/)
+### 3. House Robber III @ [Leetcode:Medium](https://leetcode.com/problems/house-robber-iii/description/)
 ````
 input: binary tree as array
 output: max profit value
 ````
+#### [Solution](house_robber_3.py)
 1. if the tree is empty return [0,0]
 2. otherwise , recursively calculate the max amount of money that can be robbed from left and  right sub-tree 
 3. calculate the amount of that can be robbed including root and excluding root 
@@ -60,4 +61,17 @@ output: max profit value
 ```
 Time: O(n)
 Space: O(n), 
+```
+### 4 .Restore IP Addresses [Leetcode:Medium](https://leetcode.com/problems/restore-ip-addresses/description/)
+````
+input: The input string s consists of digits only where 4≤ s.length ≤12
+output: list of ip addresses
+````
+#### [Solution](restore_ip_address.py)
+1. take 4 segments using backtrack and place dots among them
+2. take either 1/2/3 digits for every possible segments where no segment starts with 0
+3. add every valid ip address to the result array when 4 segments are found and end of the string is reached
+```
+Time: O(3^4)
+Space: O(n), for string concatenation 
 ```
