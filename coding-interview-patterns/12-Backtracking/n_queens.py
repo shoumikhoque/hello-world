@@ -29,12 +29,43 @@ def solve_n_queens(n):
 
     return len(results)
 
+
+# solution by neetcode
+def solveNQueens(n):
+    col=set()
+    posDiag=set()
+    negDiag=set()
+    res=[]
+    board=[["."]* n for i in range(n)]
+    def backtrack(row):
+        if row==n:
+            copy=["".join(row) for row in board]
+            res.append(copy)
+            return
+        for c in range(n):
+            if c in col or (row+c) in posDiag or (row-c) in negDiag:
+                continue
+            col.add(c)
+            posDiag.add(row+c)
+            negDiag.add(row-c)
+            board[row][c]='Q'
+
+            backtrack(row+1)
+
+            col.remove(c)
+            posDiag.remove(row+c)
+            negDiag.remove(row-c)
+            board[row][c]='.'
+    backtrack(0)
+    return res
+
+
 if __name__ == '__main__':
-    n = [14]
+    n = [8]
     for i in range(len(n)):
         print(i + 1, ".\t Queens: ",
               n[i], ", Chessboard: (", n[i], "x", n[i], ")", sep="")
-        res = solve_n_queens(n[i])
+        res = solveNQueens(n[i])
         print("\n\t Total solutions count for ",
               n[i], " queens on a ", n[i], "x", n[i], " chessboard: ", res, sep="")
         print("-" * 100, "\n", sep="")
