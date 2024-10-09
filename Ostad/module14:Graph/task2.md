@@ -2,7 +2,7 @@
 
 **Code in [connected_components.py](connected_components.py)**
 
-### Solution : Simple BFS
+### Solution : Simple DFS
 
 ````
 Time Complexity: O(n) 
