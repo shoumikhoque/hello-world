@@ -1,12 +1,21 @@
-def flood_fill(image, sr, sc, color):
-    if sr <0 or sc<0 or sr>=len(image) or sc>=len(image[0]) or image[sr][sc]==color:
+def flood_fill(image, sr, sc, target_color):
+    if image[sr][sc]==target_color:
         return image
+    rows,cols,=len(image),len(image[0])
     current_color=image[sr][sc]
-    flood_fill(image,sr-1,sc,current_color)
-    flood_fill(image,sr+1,sc,current_color)
-    flood_fill(image,sr,sc-1,current_color)
-    flood_fill(image,sr,sc+1,current_color)
-    image[sr][sc]=color
+    image[sr][sc]=target_color
+    if sr-1>=0 and image[sr-1][sc]==current_color:
+        image=flood_fill(image,sr-1,sc,target_color)
+
+    if sr+1<rows and image[sr+1][sc]==current_color:
+        image=flood_fill(image,sr+1,sc,target_color)
+
+    if sc-1>=0 and image[sr][sc-1]==current_color:
+        image=flood_fill(image,sr-1,sc,target_color)
+
+    if sc+1<cols and image[sr-1][sc]==current_color:
+        image=flood_fill(image,sr-1,sc,target_color)
+
     return image
 
 if __name__ == '__main__':
