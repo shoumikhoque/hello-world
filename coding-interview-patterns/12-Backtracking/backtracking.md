@@ -75,3 +75,35 @@ output: list of ip addresses
 Time: O(3^4)
 Space: O(n), for string concatenation 
 ```
+### 5 .Flood Fill [Leetcode:Easy](https://leetcode.com/problems/flood-fill/description/)
+````
+input: 2D array[n*m] as image , co-ordinate of starting point and target color number
+output: 2D array as image , after changing color
+````
+#### [Solution](flood_fill.py)
+1. traverse in 4 directions from starting point using DFS
+2. if color is matched with the starting pixel's color then update color 
+
+```
+Time: O(n*m)
+Space: O(n*m), 
+```
+### 6. Sudoku Solver [Leetcode:Hard](https://leetcode.com/problems/sudoku-solver/description/)
+````
+input: 2D array[9*9] as board ,numbers present existing numbers, '.' presents empty position
+output: 2D array as board, solved sudoku
+````
+#### [Solution](sudoku_solver.py)
+1. start iterating the board from the top left cell until we reach the first free cell
+2. one by one, place all numbers between 1 and 9 in the current cell, if the number isn't already present in the current
+   row , column and 3x3 sub box.
+3. write down the number that is now present in the current row , column and sub box
+4. if we reach the last cell[8,8], that means we have solved the sudoku
+5. else we move onto next cell
+6. Backtrack if the solution is not yet present and remove the last number from the cell. (clean up process)
+
+
+```
+Time: O(n*m)
+Space: O(n*m), 
+```
