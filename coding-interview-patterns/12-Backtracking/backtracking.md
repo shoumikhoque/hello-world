@@ -102,8 +102,24 @@ output: 2D array as board, solved sudoku
 5. else we move onto next cell
 6. Backtrack if the solution is not yet present and remove the last number from the cell. (clean up process)
 
-
 ```
 Time: O(n*m)
 Space: O(n*m), 
+```
+### 7. MatchSticks to Square [Leetcode:Medium](https://leetcode.com/problems/matchsticks-to-square/)
+````
+input: list of numbers representing lengths of matchsticks
+output: if the matchsticks can form a valid Square
+````
+#### [Solution](sudoku_solver.py)
+1. check if the array len is less than 4 or sum(array) is not dividable by 4 or tha maximum length of a stick is larger 
+   than the side of square. return false for all these cases.
+2. sort the matches
+3. for each of the matchsticks use backtracking to check if that matchstick can be used to any of the 4 sides
+4. if a side + matchstick is <= target len of a side then use that matchstick and call next matchstick 
+5. if all the matchsticks can be used then a square can be made
+
+```
+Time: O(4^n+nlog(n))
+Space: O(n), 
 ```
