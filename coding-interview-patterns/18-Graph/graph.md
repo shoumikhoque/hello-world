@@ -53,9 +53,9 @@ Time:
 The overall time complexity is dominated by the heap operations and processing neighbors:O((V+E)log⁡V)
 
 Space:
-Adjacency List: Takes O(m) space to store the edges.
+Adjacency List: Takes O(E) space to store the edges.
 Min-Heap: In the worst case, it stores O(V) nodes.
 Visited Set: Stores O(V) nodes.
-Overall Space Complexity: O(V + m).
+Overall Space Complexity: O(V + E).
 ```
 
