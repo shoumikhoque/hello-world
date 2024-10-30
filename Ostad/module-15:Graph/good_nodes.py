@@ -1,5 +1,5 @@
 def find_path_to_leaf(node, adj_list):
-    if
+    pass
 
 
 def number_of_good_nodes(nodes, edges, required_good_nodes):
