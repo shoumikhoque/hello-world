@@ -59,3 +59,48 @@ Visited Set: Stores O(V) nodes.
 Overall Space Complexity: O(V + E).
 ```
 
+### 2. Maze 
+
+TODO 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 3. Graph Valid Tree [Leetcode:Premium](https://leetcode.com/problems/graph-valid-tree/description/)
+````
+input:  A list of undirected edges where each edge is list of 2 nodes
+output: Find if the graph is a valid tree , meaning if it has no cycle and all nodes are reachable from other nodes
+````
+#### Steps : [Solution](../../Ostad/module-7:LinkedList/practice/reverse_linked_list.py)
+1. If the number of edges is not equal to number of nodes - 1, return false.
+2. Initialize adjacency list from the input
+3. keep a set for visited nodes and stack to keep track of nodes and initialize both with the 0th node.
+4. use DFS and stack to traverse all the nodes 
+5. if any node is visited even after it is on the set , then return false, cause this means cycle.
+6. if all nodes are visited and length of the set is the number of nodes , return true 
+#### Complexity
+```
+Time: 
+The overall time complexity is dominated by the heap operations and processing neighbors:O((V+E)log⁡V)
+
+Space:
+Adjacency List: Takes O(E) space to store the edges.
+Min-Heap: In the worst case, it stores O(V) nodes.
+Visited Set: Stores O(V) nodes.
+Overall Space Complexity: O(V + E).
+```
