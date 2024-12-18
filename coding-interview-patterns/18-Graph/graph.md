@@ -104,3 +104,25 @@ Min-Heap: In the worst case, it stores O(V) nodes.
 Visited Set: Stores O(V) nodes.
 Overall Space Complexity: O(V + E).
 ```
+### 4. Bus Routes [Leetcode:Hard](https://leetcode.com/problems/bus-routes/description/)
+````
+input:  A list of list representing nodes of points in routes, a src and dest point
+output: the number bus changes to reach destinantion
+````
+#### Steps : [Solution](bus_routes.py)
+1. create an adjacency list that maps each station to the buses that travel trough station.
+2. init a queue with src station and the bus count.
+3. iterate the queue either till it is empty or the destination is reached.
+4. visit connecting stations of the dequed nodes and enqueue connecting stations.
+5. in every iteration, increase the bus count if a new bus is passing through the same station. 
+6. return bus count.
+#### Complexity
+```
+Time: 
+O(R*S) , R =number of routes and S=number of stations
+Space:
+Adjacency List: Takes O(R*S) space to store the routes.
+Queue: In the worst case, it stores O(R*S) nodes.
+Visited Set: Stores O(S) nodes.
+Overall Space Complexity: O(R*S).
+```
