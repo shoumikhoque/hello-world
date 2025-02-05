@@ -36,5 +36,8 @@ in the naive solution we get two variable(capacity and the number of items to co
 6. if the weight of i-th item is less than or equal j-weights[i] capacity than we can find the max profit from calculating the including it and excluding it  
 7. else we reuse the subproblem of dp[i-1][j]
 8. return the last entry dp[n][capacity]
-
+#### Memory Optimized Tabulation: 
+1. To fill up a row, we only require the previous row's values. so we can declare 2 arrays of size (Capacity+1)
+2. dp: this array represents the sub-problems up to (i-1)th item. we only need these solutions to compute the solution up to i-th item 
+3. temp: this array represents the sub-problems up to the current ith item
 #### Complexity
