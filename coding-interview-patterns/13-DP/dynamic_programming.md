@@ -41,3 +41,6 @@ in the naive solution we get two variable(capacity and the number of items to co
 2. dp: this array represents the sub-problems up to (i-1)th item. we only need these solutions to compute the solution up to i-th item 
 3. temp: this array represents the sub-problems up to the current ith item
 #### Complexity
+
+
+### 2. Coin Change
