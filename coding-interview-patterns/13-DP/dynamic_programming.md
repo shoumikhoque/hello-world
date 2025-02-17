@@ -15,6 +15,7 @@
 3. Robotics motion planning
 4. 
 ## Practice Problems
+## Category 1: Knapsack
 ### 1. 0/1 Knapsack 
 ````
 input: list of weights, list of profits of objects and capacity of bag
@@ -41,6 +42,50 @@ in the naive solution we get two variable(capacity and the number of items to co
 2. dp: this array represents the sub-problems up to (i-1)th item. we only need these solutions to compute the solution up to i-th item 
 3. temp: this array represents the sub-problems up to the current ith item
 #### Complexity
-
+`Time:O(capacity*len(weights))
+Space:O(capacity)`
 
 ### 2. Coin Change
+````
+input: list of coins and target amount to be made using those coins 
+output: minimum number of coins that can be used to make up the amount. if the amount can not be make , return -1
+````
+#### Brute force
+1. traverse the list of coins . to make the amount we can either use the coin or leave the coin.
+2. calculate for both case and return the minimum
+3. if we take the coin then new amount we have to make is amount-coin_value. we can reuse the coin as well. 
+4. if we leave the coin then we move onto the next coin and calculate using the same formula.
+#### Top-Down memoization:
+cache the result of a recursive call for each (amount,position) pair and reuse whenever necessary
+#### Bottom Up tabulation:
+1. define a 2D array dp for each coins[i] and amount[j] pair where dp[i][j] represents the minimum amount of coins needed to make up amount j
+using coins[0 to ith]
+2. traverse the array by calculating minimum value for each row and column
+
+#### Complexity
+`Time:O(amount*len(coins))
+Space:O(amount)`
+
+### 3. Coin Change 2
+````
+input: list of coins and target amount to be made using those coins 
+output: maximum number of combinations of coins that adds equal to the amount. if the amount can not be make , return 0
+````
+#### Brute force:
+1. if amount is 0 then a successful combination is already made. so return 1
+2. if amount<0 or pos>=len(coins) return 0, cause no combination can be made.
+3. traverse the list of coins . if a coins value is less than amount then chose from two options. 
+4. for using the coin,  call the recursive function for (amount-coin_value,index of the coin)
+5. for leaving the coin , call the recursive function for the same amount but with the index of next coin.
+6. add the return value of the recursive call get the final result.
+#### Top-Down Memoization
+1. some (amount, index of coin) recursive function is being called multiple times. so we can cache them in a 2D array of length(amount+1)*(len(coins)+1) and reuse the values
+##### Bottom Up tabulation:
+1. we can traverse the dp table for all coins in reverse order for range (1 to amount+1) as target
+2. for each coin we use it or leave it
+3. to leave it we take the value of the previously computed rows value 
+4. to use the coin take the value of (target -coins[i])th value of the previous amount 
+#### Space optimized Bottom Up
+To calculate the dp table we only need one array to calculate the ans for x amount and another for x-1 amount only. 
+`Time:O(amount*len(coins))
+Space:O(amount)`
