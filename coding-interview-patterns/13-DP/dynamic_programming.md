@@ -66,7 +66,7 @@ using coins[0 to ith]
 `Time:O(amount*len(coins))
 Space:O(amount)`
 
-### 3. Coin Change 2
+### 3. Coin Change 2 @[Leetcode:Medium](https://leetcode.com/problems/coin-change-ii/)
 ````
 input: list of coins and target amount to be made using those coins 
 output: maximum number of combinations of coins that adds equal to the amount. if the amount can not be make , return 0
@@ -89,3 +89,13 @@ output: maximum number of combinations of coins that adds equal to the amount. i
 To calculate the dp table we only need one array to calculate the ans for x amount and another for x-1 amount only. 
 `Time:O(amount*len(coins))
 Space:O(amount)`
+
+### 3. Perfect squares @ [Leetcode:Medium](https://leetcode.com/problems/perfect-squares)
+
+````
+input:  n 
+output: the least number of perfect square numbers that sum to n
+````
+#### Brute Force
+generate list of square numbers <= n
+execute coin change problem for the list of square numbers and n
