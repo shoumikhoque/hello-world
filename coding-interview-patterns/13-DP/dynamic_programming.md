@@ -99,3 +99,6 @@ output: the least number of perfect square numbers that sum to n
 #### Brute Force
 generate list of square numbers <= n
 execute coin change problem for the list of square numbers and n
+### 4. Combination sum @[Leetcode:Medium](https://leetcode.com/problems/combination-sum-iv/)
+
+same problem as Coin change 2
