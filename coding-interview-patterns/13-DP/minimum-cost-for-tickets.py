@@ -1,36 +1,28 @@
-
-
-
 def solve(days, costs):
-    costs={
-        1:costs[0],
-        7:costs[1],
-        30:costs[2]
-    }
     dp={}
-
-    def next_index_for_30_days(index):
-        ans=days[index]
-        for i in range(index+1,len(days)):
-            if ans>days[index]+29:
-                break
-            ans=days[i]
-        return ans
-
-    def next_index_for_7_days(index):
-        ans = days[index]
-        for i in range(index+1, len(days)):
-            if ans > days[index] + 6:
-                break
-            ans = days[i]
-        return ans
-    def calc(index):
-        if index>=len(days):
+    def calc(i):
+        if i==len(days):
             return 0
-        result=costs[0]+calc(index+1)
-        result=min( result,costs[1]+calc(next_index_for_7_days(index)),30+ costs[2]+calc(next_index_for_30_days(index)))
-        return result
+        if i in dp:
+            return dp[i]
+        dp[i]=float("inf")
+        for d, c in zip([1,7,30],costs):
+            j=i
+            while j<len(days) and days[j]<days[i]+d:
+                j+=1
+            dp[i]=min(dp[i],c+calc(j))
+        return dp[i]
     return calc(0)
+def solve_table(days,costs):
+    dp={}
+    for i in range(len(days)-1,-1,-1):
+        dp[i]= float("inf")
+        for d, c in zip([1,7,30],costs):
+            j=i
+            while j<len(days) and days[j]<days[i]+d:
+                j+=1
+            dp[i]=min(dp[i],c+dp.get(j,0))
+    return dp[0]
 
 
 
