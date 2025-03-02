@@ -27,8 +27,6 @@ def solve_table(grid):
             dp[i][j]=grid[i][j]+min(dp[i][j],dp[i-1][j],dp[i][j-1])
     return dp[m-1][n-1]
 
-
-
 if __name__ == '__main__':
     grid= [[1,3,1],[1,5,1],[4,2,1]]
     print(solve_table(grid))
