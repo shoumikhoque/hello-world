@@ -102,3 +102,31 @@ execute coin change problem for the list of square numbers and n
 ### 4. Combination sum @[Leetcode:Medium](https://leetcode.com/problems/combination-sum-iv/)
 
 same problem as Coin change 2
+
+### 4. Domino and Tromino tiling @ [Leetcode:Medium](https://leetcode.com/problems/domino-and-tromino-tiling)
+
+````
+input:  n 
+output: the number of ways to tile an 2 x n board
+````
+#### Observation
+![img.png](img.png)
+let's assume dp[i, j] denoting one of the following arrangements in column index i.
+1. The current column can be filled with 1, 2 × 1 dominos in state 0, if the previous column had state 0.
+2. The current column can be filled with 2, 1 × 2 dominos horizontally in state 0, if the i – 2 column has state 0.
+3. The current column can be filled with an ‘L‘ shaped domino in state 1 and state 2, if the previous column had state 0.
+4. The current column can be filled with 1 × 2 shaped domino in state 1 if the previous column has state 2 or in state 2 if the previous column has state 1.
+5. Therefore, the transition of the state can be defined as the following:
+   1. `dp[i][0] = (dp[i – 1][0] + dp[i – 2][0]+ dp[i – 2][1] + dp[i – 2][2]). `
+   2. `dp[i][1] = dp[i – 1][0] + dp[i – 1][2]. `
+   3. `dp[i][2] = dp[i – 1][0] + dp[i – 1][1].`
+#### Solution
+1. If the value of N is less than 3, then print N as the total number of ways.
+2. Initialize a 2-dimensional array, say dp[][3] that stores all the states of the dp.
+3. Consider the Base Case: dp[0][0] = dp[1][0] = dp[1][1] = dp[1][2] = 1.
+4. Iterate over the given range [2, N] and using the variable i and perform the following transitions in the dp as:
+    1. `dp[i][0] equals (dp[i – 1][0] + dp[i – 2][0]+ dp[i – 2][1] + dp[i – 2][2]).`
+    2.` dp[i][1] equals dp[i – 1][0] + dp[i – 1][2].`
+    3. `dp[i][2] equals dp[i – 1][0] + dp[i – 1][1].`
+
+5. After completing the above steps, print the total number of ways stored in `dp[N][0]`.
