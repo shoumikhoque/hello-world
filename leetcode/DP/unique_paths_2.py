@@ -16,7 +16,9 @@ def solve(grid):
                 dp[i][j]= 0
         return dp[i][j]
     return dfs(m-1,n-1)
+def solve_table:
+    pass
 
 if __name__ == '__main__':
-    grid= [[1,0]]
+    grid= [[0,0,0],[0,1,0],[0,0,0]]
     print(solve(grid))
