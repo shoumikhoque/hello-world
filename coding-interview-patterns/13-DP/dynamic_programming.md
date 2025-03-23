@@ -130,3 +130,26 @@ let's assume dp[i, j] denoting one of the following arrangements in column index
     3. `dp[i][2] equals dp[i – 1][0] + dp[i – 1][1].`
 
 5. After completing the above steps, print the total number of ways stored in `dp[N][0]`.
+
+### 5. Unique Binary Search Trees
+````
+input:  n 
+output: the number of ways to make a unique binary trees of n nodes
+````
+#### Observation
+for `n` number of nodes in a binary tree , we can have root node as 1,2,3....n and then we can organize the left and right
+sub-tree according to the root. if root is `r` then each left sub-tree will have `r-1` nodes and right sub-tree will have `n-r` nodes. 
+for all possible roots r in the range of n 
+multiplying the number of unique binary search trees from the left sub-tree and the number of unique binary search trees
+from right subtree will result in the number of unique binary search tree if the root is r .
+so by adding all the numbers for all possible roots will result in the result.  
+`numTree[n]=(numTree[1]*numTree[n-1])+(numTree[2]*numTree[n-2])+....+(numTree[n-1]*numTree[1])
+`
+#### [Solution](./../../leetcode/DP/unique_binary_search_trees.py)
+
+1. create a cache array numTree[n+1] with value 1 in each cell
+2. for node (2 to n) calculate numTree[node]
+3. for each possible root (1 to node) calculate the total possible unique BST 
+4. return numTree[n]
+`Time:O(n^2)
+Space:O(n)`
