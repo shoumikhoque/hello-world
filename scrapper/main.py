@@ -23,8 +23,8 @@ def fetch_chapter(chapter_number):
         print("Failed to retrieve page. Status code:", response.status_code)
         return ''
 if __name__ == '__main__':
-    start=4401
-    end=6399
+    start=6751
+    end=7000
     for i in range(start,end+1,100):
         st =i
         en=i+100
