@@ -1,19 +1,28 @@
 def solve(s, words):
-    def calc(left, right, pos):
-        if pos >= len(words):
-            return False
-        target = s[left:right + 1]
-        if target == '' or target == words[pos]:
+    dp={}
+    def calc(i):
+        if i>=len(s):
             return True
-        if len(target) < len(words[pos]):
-            return False
-        ans = calc(left, right, pos + 1)
-        if words[pos] == target[:len(words[pos])]:
-            ans = ans or calc(len(words[pos]), right, 0)
-        return ans
-    return calc(0, len(s) - 1, 0)
+        if i in dp:
+            return dp[i]
+        dp[i]=False
+        for w in words:
+            if i+len(w)<=len(s) and s[i:i+len(w)]==w:
+                dp[i]=True and calc(i+len(w))
+        return dp[i]
+
+    return calc(0)
+def solve_table(s,words):
+    dp=[False]*(len(s))+[True]
+    for i in range(len(s)-1,-1,-1):
+        for w in words:
+            if i+len(w)<=len(s) and s[i: i+len(w)]==w:
+                dp[i]=dp[i+len(w)]
+            if dp[i]:
+                break
+    return dp[0]
 
 if __name__ == '__main__':
-    target = "leetcode"
-    wordDict =  ["leet","code"]
+    target = "abcd"
+    wordDict = ["a","abc","b","cd"]
     print(solve(target,wordDict))
