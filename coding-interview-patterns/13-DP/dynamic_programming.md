@@ -4,7 +4,16 @@
 ### Pattern:
 1. Optimal Substructure
 2. Overlapping SubProblems
-
+### Problems pattern
+1. Fibonacci Style
+2. General 1D
+3. Knapsack
+4. matrix
+5. State machine/ Buy & Sell stock
+6. Strings
+7. Longest Common SubSequence 
+8. Longest Increasing SubSequence
+9. Trees
 ### TopDown Approach
 `fib(n)=fib(n-1)+fib(n-2)+ ..... + fib(1)+fib(0)`
 ### Bottom Up Approach
