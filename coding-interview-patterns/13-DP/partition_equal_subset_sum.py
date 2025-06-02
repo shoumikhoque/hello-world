@@ -3,16 +3,19 @@ def solve_bottom_up(nums):
     if total %2==1:
         return False
     total=total//2
-    nums.sort()
-    dp= [[True]* len(nums)] + [[False]*len(nums) for i in range(total)]
-    for target in range(1,total+1):
-        for i in range(len(nums)):
-            if nums[i]==target:
-                dp[target][i]=True
+    dp = [False] * (total + 1)
+    dp[0] = True
+
+    for n in nums:
+        for target in range(total, n - 1, -1):
+            if dp[target]:
                 continue
-            if i>0:
-                dp[target][i]= dp[target][i-1] or (target-nums[i]>=0 and dp[target-nums[i]][i-1])
-    return dp[total][len(nums)-1]
+            if dp[target - n]:
+                dp[target] = True
+            if dp[-1]:
+                return True
+    return False
+
 if __name__ == '__main__':
     nums=[100,4,6]
     print(solve_bottom_up(nums))
