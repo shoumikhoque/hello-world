@@ -20,10 +20,10 @@ def solve_tabulation(cost):
     dp = [float('inf')] * n
     dp[0] = 0  # Starting at station 0
 
-    for i in range(1, n):
-        for j in range(i):
-            if cost[j][i] != -1:  # Check if a direct route exists
-                dp[i] = min(dp[i], dp[j] + cost[j][i])
+    for dest in range(1, n):
+        for src in range(dest):
+            if cost[src][dest] != -1:  # Check if a direct route exists
+                dp[dest] = min(dp[dest], dp[src] + cost[src][dest])
 
 
 '''
