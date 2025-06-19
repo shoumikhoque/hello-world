@@ -24,7 +24,7 @@ def fetch_chapter(chapter_number):
         return ''
 if __name__ == '__main__':
     start=6751
-    end=7000
+    end=6850
     for i in range(start,end+1,100):
         st =i
         en=i+100
